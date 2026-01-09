@@ -68,25 +68,25 @@ const EndDay = () => {
       <div className="absolute top-40 right-10 w-72 h-72 bg-red-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
       <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-amber-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
 
-      <div className="bg-white/30 backdrop-blur-xl p-10 rounded-3xl shadow-2xl w-full max-w-md text-center relative z-10 border border-white/40">
+      <div className="bg-white/30 backdrop-blur-xl p-6 md:p-10 rounded-3xl shadow-2xl w-full max-w-md text-center relative z-10 border border-white/40">
         {/* Glassmorphism gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-white/20 to-transparent pointer-events-none rounded-3xl"></div>
 
         {/* Content */}
         <div className="relative z-10">
-          <div className="flex justify-center mb-6">
+          <div className="flex justify-center mb-4 md:mb-6">
             <div className="relative">
               <div className="absolute inset-0 bg-red-400 rounded-full blur-2xl opacity-50 animate-pulse"></div>
-              <div className="relative bg-gradient-to-br from-red-500 to-orange-600 p-4 rounded-full shadow-2xl">
-                <Fuel size={56} className="text-white relative" strokeWidth={2.5} />
+              <div className="relative bg-gradient-to-br from-red-500 to-orange-600 p-3 md:p-4 rounded-full shadow-2xl">
+                <Fuel size={40} className="text-white relative md:w-14 md:h-14" strokeWidth={2.5} />
               </div>
             </div>
           </div>
 
-          <h2 className="text-5xl font-bold mb-4 text-gray-900 drop-shadow-sm">
+          <h2 className="text-3xl md:text-5xl font-bold mb-3 md:mb-4 text-gray-900 drop-shadow-sm">
             Finalize Your Day
           </h2>
-          <p className="text-gray-800 mb-8 text-lg font-medium drop-shadow-sm">
+          <p className="text-gray-800 mb-6 md:mb-8 text-sm md:text-lg font-medium drop-shadow-sm">
             Enter your total fuel expense to complete the log.
           </p>
 

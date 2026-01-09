@@ -57,23 +57,23 @@ const StartDay = () => {
         ref={cardRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="bg-white/90 backdrop-blur-sm p-10 rounded-2xl shadow-2xl w-full max-w-md text-center relative z-10 transition-all duration-200 ease-out"
+        className="bg-white/90 backdrop-blur-sm p-6 md:p-10 rounded-2xl shadow-2xl w-full max-w-md text-center relative z-10 transition-all duration-200 ease-out"
         style={{ transform }}
       >
         {/* Animated icon with floating effect */}
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-4 md:mb-6">
           <div className="relative">
             <div className="absolute inset-0 bg-orange-400 rounded-full blur-2xl opacity-50 animate-pulse"></div>
-            <div className="relative bg-gradient-to-br from-orange-500 to-amber-600 p-4 rounded-full shadow-2xl animate-float">
-              <Bike size={56} className="text-white relative" strokeWidth={2.5} />
+            <div className="relative bg-gradient-to-br from-orange-500 to-amber-600 p-3 md:p-4 rounded-full shadow-2xl animate-float">
+              <Bike size={40} className="text-white relative md:w-14 md:h-14" strokeWidth={2.5} />
             </div>
           </div>
         </div>
 
-        <h2 className="text-5xl font-bold mb-4 text-gray-800 bg-gradient-to-r from-orange-600 via-amber-600 to-yellow-600 bg-clip-text text-transparent">
+        <h2 className="text-3xl md:text-5xl font-bold mb-3 md:mb-4 text-gray-800 bg-gradient-to-r from-orange-600 via-amber-600 to-yellow-600 bg-clip-text text-transparent">
           RideLog Pro
         </h2>
-        <p className="text-gray-600 mb-8 text-lg">Track your rides, earnings, and kilometers with ease.</p>
+        <p className="text-gray-600 mb-6 md:mb-8 text-sm md:text-lg">Track your rides, earnings, and kilometers with ease.</p>
 
         <div className="mb-6">
           <input
