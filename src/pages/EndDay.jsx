@@ -106,9 +106,9 @@ const EndDay = () => {
 
           <button
             onClick={handleEndDay}
-            className="w-full bg-gradient-to-r from-red-600 via-orange-600 to-red-600 hover:from-red-700 hover:via-orange-700 hover:to-red-700 text-white font-bold py-4 px-8 rounded-xl text-xl transform hover:scale-105 transition-all shadow-lg hover:shadow-2xl border border-white/30"
+            className="w-full bg-gradient-to-r from-red-600 via-orange-600 to-red-600 hover:from-red-700 hover:via-orange-700 hover:to-red-700 text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-lg md:rounded-xl text-base md:text-lg lg:text-xl transform hover:scale-105 transition-all shadow-lg hover:shadow-2xl border border-white/30"
           >
-            End Day & Generate Log Book
+            End Day & Generate Log
           </button>
         </div>
       </div>
