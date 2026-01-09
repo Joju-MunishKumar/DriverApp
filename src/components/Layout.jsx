@@ -78,8 +78,8 @@ const Layout = () => {
       </header>
 
       {/* Main Content */}
-      <main>
-        <div className="max-w-7xl mx-auto py-6 md:py-10 px-4 sm:px-6 lg:px-8">
+      <main className="overflow-x-hidden">
+        <div className="max-w-7xl mx-auto py-6 md:py-10 px-3 sm:px-4 md:px-6 lg:px-8">
           <Outlet />
         </div>
       </main>
