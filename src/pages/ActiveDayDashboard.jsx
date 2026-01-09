@@ -61,9 +61,9 @@ const ActiveDayDashboard = () => {
 
   return (
     <div>
-      <div className="mb-8 p-6 bg-white rounded-xl shadow-md">
-        <h1 className="text-4xl font-bold text-gray-800">Welcome, {activeDay.driverName}!</h1>
-        <p className="text-gray-600 mt-2">Day started at: {new Date(activeDay.startTime).toLocaleTimeString()}</p>
+      <div className="mb-6 md:mb-8 p-4 md:p-6 bg-white rounded-xl shadow-md">
+        <h1 className="text-2xl md:text-4xl font-bold text-gray-800">Welcome, {activeDay.driverName}!</h1>
+        <p className="text-sm md:text-base text-gray-600 mt-2">Day started at: {new Date(activeDay.startTime).toLocaleTimeString()}</p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
@@ -73,16 +73,16 @@ const ActiveDayDashboard = () => {
         <StatCard title="Pickup/Drop-off" value={`${pickupCount} / ${dropoffCount}`} icon={<TrendingUp size={28} className="text-purple-600" />} />
       </div>
 
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-3xl font-bold text-gray-800">Manage Trips</h2>
-        <button onClick={() => setIsModalOpen(true)} className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg flex items-center space-x-2 transform hover:scale-105 transition-transform">
-          <Plus size={22} />
-          <span>Create New Trip</span>
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-800">Manage Trips</h2>
+        <button onClick={() => setIsModalOpen(true)} className="w-full sm:w-auto bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center space-x-2 transform hover:scale-105 transition-all shadow-lg">
+          <Plus size={20} />
+          <span className="text-sm md:text-base">Create New Trip</span>
         </button>
       </div>
 
-      <div className="mb-10 bg-white p-6 rounded-xl shadow-md">
-        <h3 className="text-2xl font-bold text-gray-800 mb-4">Active Trips</h3>
+      <div className="mb-6 md:mb-10 bg-white p-4 md:p-6 rounded-xl shadow-md">
+        <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-4">Active Trips</h3>
         {activeTrips.length > 0 ? (
           <div className="space-y-4">
             {activeTrips.map(trip => (
@@ -90,35 +90,35 @@ const ActiveDayDashboard = () => {
             ))}
           </div>
         ) : (
-          <p className="text-gray-500 text-center py-4">No active trips.</p>
+          <p className="text-gray-500 text-center py-4 text-sm md:text-base">No active trips.</p>
         )}
       </div>
 
-      <div className="bg-white p-6 rounded-xl shadow-md">
-        <h3 className="text-2xl font-bold text-gray-800 mb-4">Completed Trips</h3>
+      <div className="bg-white p-4 md:p-6 rounded-xl shadow-md">
+        <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-4">Completed Trips</h3>
         {completedTrips.length > 0 ? (
           <div className="rounded-xl">
             <ul className="divide-y divide-gray-200">
               {completedTrips.map((trip) => (
-                <li key={trip.id} className="py-4 flex justify-between items-center">
+                <li key={trip.id} className="py-3 md:py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
                   <div>
-                    <p className="font-semibold text-lg text-gray-800">{trip.title}</p>
-                    <p className="text-md text-gray-500">{trip.kilometers} km - <span className="capitalize">{trip.type}</span></p>
+                    <p className="font-semibold text-base md:text-lg text-gray-800">{trip.title}</p>
+                    <p className="text-sm md:text-md text-gray-500">{trip.kilometers} km - <span className="capitalize">{trip.type}</span></p>
                   </div>
-                  <p className="font-bold text-xl text-green-600">+₹{trip.earnings.toFixed(2)}</p>
+                  <p className="font-bold text-lg md:text-xl text-green-600">+₹{trip.earnings.toFixed(2)}</p>
                 </li>
               ))}
             </ul>
           </div>
         ) : (
-          <p className="text-gray-500 text-center py-4">No completed trips yet.</p>
+          <p className="text-gray-500 text-center py-4 text-sm md:text-base">No completed trips yet.</p>
         )}
       </div>
 
-      <div className="mt-12 flex justify-end">
-        <button onClick={() => navigate('/end-day')} className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg flex items-center space-x-2 text-xl transform hover:scale-105 transition-transform">
+      <div className="mt-8 md:mt-12 flex justify-center sm:justify-end">
+        <button onClick={() => navigate('/end-day')} className="w-full sm:w-auto bg-gradient-to-r from-red-600 via-orange-600 to-red-600 hover:from-red-700 hover:via-orange-700 hover:to-red-700 text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-lg flex items-center justify-center space-x-2 text-base md:text-xl transform hover:scale-105 transition-all shadow-lg">
           <span>End Day</span>
-          <ArrowRight size={24} />
+          <ArrowRight size={20} className="md:w-6 md:h-6" />
         </button>
       </div>
       <AddTripModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onAddTrip={handleAddTrip} />
